@@ -81,7 +81,7 @@ public class MicrophoneSource extends org.m4m.domain.MicrophoneSource {
 
         frame.setLength(actualBytesRead);
 
-        long presentationTimeNs = (actualBytesRead / (sampleRate * sampleSize * recordChannels)) / 1000000000;
+        long presentationTimeNs = (long)((actualBytesRead / (float)(sampleRate * sampleSize * recordChannels)) * 1000000000);
 
         long sampleTimeMicrosec = (System.nanoTime() - startTimeNs + presentationTimeNs) / 1000;
         frame.setSampleTime(sampleTimeMicrosec);

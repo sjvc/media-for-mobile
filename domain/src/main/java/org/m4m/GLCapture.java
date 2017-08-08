@@ -26,8 +26,8 @@ import org.m4m.domain.IMicrophoneSource;
  */
 
 public class GLCapture extends CapturePipeline {
-    private ICaptureSource videoSource;
-    private IMicrophoneSource audioSource;
+    private ICaptureSource videoSource = null;
+    private IMicrophoneSource audioSource = null;
     private boolean frameInProgress;
 
     public GLCapture(IAndroidMediaObjectFactory factory, IProgressListener progressListener) {
@@ -110,6 +110,8 @@ public class GLCapture extends CapturePipeline {
     }
 
     public void captureAudioChunk(float[] samples, int length){
-        audioSource.captureAudioChunk(samples, length);
+        if (audioSource != null) {
+            audioSource.captureAudioChunk(samples, length);
+        }
     }
 }
