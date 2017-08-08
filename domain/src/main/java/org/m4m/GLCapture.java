@@ -108,4 +108,8 @@ public class GLCapture extends CapturePipeline {
 
         frameInProgress = false;
     }
+
+    public void captureAudioChunk(float[] samples, int length){
+        audioSource.captureAudioChunk(samples, length);
+    }
 }
