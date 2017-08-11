@@ -136,6 +136,7 @@ public class MicrophoneSource extends org.m4m.domain.MicrophoneSource {
         return new AudioFormatAndroid("audio/aac", sampleRate, recordChannels);
     }
 
+    @Override
     public synchronized void configure(int sampleRate, int channels) {
         this.sampleRate = sampleRate;
         recordChannels = channels;

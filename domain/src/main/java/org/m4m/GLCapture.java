@@ -55,6 +55,12 @@ public class GLCapture extends CapturePipeline {
         audioSource.configure(mediaFormat.getAudioSampleRateInHz(), mediaFormat.getAudioChannelCount());
     }
 
+    public void setBufferSizeInSamples(int bufferSizeInSamples){
+        if (audioSource != null) {
+            audioSource.setBufferSizeInSamples(bufferSizeInSamples);
+        }
+    }
+
     /**
      * Stops media capturing
      */
